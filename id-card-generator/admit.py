@@ -54,11 +54,11 @@ def ans():
     s2.set(name)
 
     (x, y) = (50, 350)
-    k1 = s3.get()
+    k1 = s8.get()
     message = str('Gender: ' + str(k1))
     color = 'rgb(0, 0, 0)'  # black color
     draw.text((x, y), message, fill=color, font=font)
-    s3.set(k1)
+    s8.set(k1)
 
     (x, y) = (400, 350)
     k2 = s5.get()
@@ -75,11 +75,11 @@ def ans():
     s4.set(k3)
 
     (x, y) = (50, 550)
-    k4 = s7.get()
+    k4 = s3.get()
     message = str('Blood Group: ' + str(k4))
     color = 'rgb(255, 0, 0)'  # black color
     draw.text((x, y), message, fill=color, font=font)
-    s7.set(k4)
+    s3.set(k4)
 
     (x, y) = (50, 650)
     temp = s6.get()
@@ -89,15 +89,15 @@ def ans():
     s6.set(temp)
 
     (x, y) = (50, 750)
-    k5 = s8.get()
+    k5 = s7.get()
     message = str('Address: ' + str(k5))
     color = 'rgb(0, 0, 0)'  # black color
     draw.text((x, y), message, fill=color, font=font)
-    s8.set(k5)
+    s7.set(k5)
 
 # save the edited image
 
-    image.save(str(name) + '.png')
+    image.save((str(idno)+name) + '.png')
 
     img = pyqrcode.create(str(company) + str(idno))  # this info. is added in QR code, also add other things
     img.svg(str(idno)+'.svg', scale = 8)
@@ -109,7 +109,7 @@ def ans():
     til = Image.open(str(idno) + '.png')
     image.paste(st, (800, 280))
     image.paste(til, (800, 600)) # 25x25
-    image.save(name + '.png')
+    image.save((str(idno)+name) + '.png')
 
     do="Your ID Card Successfully created in a PNG file " + name + '.png'
     messagebox.showinfo("Message",do)
